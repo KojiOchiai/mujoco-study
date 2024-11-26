@@ -3,7 +3,7 @@ import time
 import mujoco
 import mujoco.viewer
 
-m = mujoco.MjModel.from_xml_path("mjcf/mjcf.xml")
+m = mujoco.MjModel.from_xml_path("mjcf/box.xml")
 d = mujoco.MjData(m)
 
 with mujoco.viewer.launch_passive(m, d) as viewer:

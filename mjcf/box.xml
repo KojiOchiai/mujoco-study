@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<mujoco model="falling_box">
+    <!-- Physics settings for the world -->
+    <option gravity="0 0 -9.81" timestep="0.01"/>
+
+    <!-- World body containing the floor and the falling box -->
+    <worldbody>
+        <!-- Floor -->
+        <body name="floor" pos="0 0 0">
+            <!-- Define the floor as a plane with a small thickness -->
+            <geom type="plane" size="1 1 0.01" rgba="0.8 0.8 0.8 1"/>
+        </body>
+
+        <!-- Falling box -->
+        <body name="falling_box" pos="0 0 1">
+            <!-- Define the box with a size of 0.1x0.1x0.1 and red color -->
+            <geom type="box" size="0.1 0.1 0.1" rgba="1 0 0 1"/>
+            <!-- Define a free joint, allowing the box to move freely in space -->
+            <joint type="free" name="free_falling" />
+        </body>
+
+        <!-- Lighting setup -->
+        <light name="light1" pos="2 2 2" dir="-1 -1 -1" diffuse="1 1 1" specular="1 1 1"/>
+  
+    </worldbody>
+
+</mujoco>
